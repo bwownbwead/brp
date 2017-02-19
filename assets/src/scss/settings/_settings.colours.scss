@@ -1,0 +1,25 @@
+/*
+	Settings
+	----------------------------------- */
+	
+	$colours: (
+		'white': #fff,
+		'black': #000,
+		'orange': #ff9c00,
+		'mid-grey': #636363,
+		'lightest-grey': #f0f0f0
+	);
+
+	// here we define adjusted versions of the colours above
+	$adjusted-colours: (
+		// 'lightened-grey': lighten(map-get($colours, 'grey'), 2%),
+		// 'trans-black': rgba(map-get($colours, 'black'), .5)
+	);
+
+	$bg-colours: map-merge($colours, $adjusted-colours);
+	$text-colours: map-merge($colours, $adjusted-colours);
+	
+	
+	// colours for specific things (global / sitewide variabls)
+	$site-bg-colour: map-get($colours, 'white');
+	$site-base-font-colour: map-get($colours, 'mid-grey');

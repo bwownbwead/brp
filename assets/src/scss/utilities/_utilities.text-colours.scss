@@ -1,0 +1,11 @@
+/*
+	Utilities
+	----------------------------------- */
+
+	// generates all text colour classes using the 
+	// colour names in the specific colour map
+
+	// eg. ".fc-dark-blue"
+	.fc {
+		@include generate-colour-util-classes($text-colours, 'color');
+	}

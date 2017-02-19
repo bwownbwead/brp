@@ -1,0 +1,29 @@
+/*
+	Settings
+	----------------------------------- */
+	
+	// these are the vars that the twit bootstrap 
+	// grid uses for its media queries
+	$bootstrap-sm: 768px;
+	$bootstrap-sm-max: $bootstrap-sm - 1;
+	$bootstrap-md: 1024px;
+	$bootstrap-md-max: $bootstrap-md - 1;
+	$bootstrap-lg: 1280px;
+
+	$breakpoints: (
+		// Mobile first
+		"large-mobile": "(min-width: 380px)",
+		"large-mobile-max": "(max-width: 380px)",
+		"phablet": "(min-width: 480px)",
+		"phablet-max": "(max-width: 480px)",
+		"small-tablet": "(min-width: 580px)",
+		"tablet": "(min-width: #{$bootstrap-sm})",
+		"tablet-max": "(max-width: #{$bootstrap-sm-max})",
+		"desktop": "(min-width: #{$bootstrap-md})",
+		"desktop-max": "(max-width: #{$bootstrap-md-max})",
+		"wide": "(min-width: #{$bootstrap-lg})",
+		"wider": "(min-width: 1366px)",
+		"widest": "(min-width: 1600px)",
+		// Retina images
+		"retina": "print, (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 192dpi)"
+	);

@@ -1,0 +1,76 @@
+/*
+	Settings
+	----------------------------------- */
+	
+	$base-font-size--smaller: 12px !default;
+	$base-font-size--small: 14px !default;
+
+	$base-font-size: 16px !default;
+
+	$base-font-size--large:	20px !default;
+
+	$base-line-height: 1.4 !default;
+	$base-line-height--small: 1.2 !default;
+	$base-line-height--large: 1.5 !default;
+
+
+	// standard font sizes
+
+	$font-sizes-xs: (
+		null: 14px
+	);
+
+	$font-sizes-s: (
+		null: ($base-font-size--smaller, $base-line-height),
+		"desktop": ($base-font-size--small, $base-line-height)
+	);
+
+	$font-sizes-m: (
+		null: ($base-font-size--small, $base-line-height--large),
+		"tablet": (15px, $base-line-height--large),
+		"desktop": ($base-font-size, $base-line-height--large)
+	);
+
+	$font-sizes-l: (
+		null: (24px, $base-line-height),
+		"tablet": (32px, $base-line-height),
+		"desktop": (40px, $base-line-height--small),
+		"wide": (24px, $base-line-height--small)
+	);
+
+	$font-sizes-xl: (
+		null: (24px, $base-line-height),
+		"tablet": (32px, $base-line-height),
+		"desktop": (40px, $base-line-height--small),
+		"wide": (32px, $base-line-height--small)
+	);
+
+	$font-sizes-xxl: (
+		null: (24px, $base-line-height),
+		"tablet": (32px, $base-line-height),
+		"desktop": (40px, $base-line-height--small),
+		"wide": (40px, $base-line-height--small)
+	);
+
+	$font-sizes-xxxl: (
+		null: (24px, $base-line-height),
+		"tablet": (32px, $base-line-height),
+		"desktop": (40px, $base-line-height--small),
+		"wide": (52px, $base-line-height--small)
+	);
+
+	
+	// custom section font sizes
+
+	$main-nav-font-sizes: (
+		null: $base-font-size,
+		"tablet": ($base-font-size--large, $base-line-height),
+		"desktop": ($base-font-size--smaller, $base-line-height),
+		"wide": ($base-font-size, $base-line-height)
+	);
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+
+/*
+	Tools
+	----------------------------------- */
+
+	@function calculate-rem($size) {
+		$rem-size: $size / $base-font-size;
+		@return #{$rem-size}rem;
+	}
+
+	@mixin font-size-only($size) {
+		font-size: $size;
+		font-size: calculate-rem($size);
+	}
+
+	@mixin line-height-only($size) {
+		line-height: $size;
+		line-height: calculate-rem($size);
+	}
+
+	// Font size + line-height: Output both pixel and rem size
+	@mixin font-size($size, $line-height: $base-line-height) {
+		@include font-size-only($size);
+		@include line-height-only($size * $line-height);
+	}
+
+	
+	@mixin argument-length($fs-font-size) {
+		@if length($fs-font-size) == 2 {
+			@include font-size(
+				nth($fs-font-size, 1), 
+				nth($fs-font-size, 2) 
+			);
+		}
+		@else {
+			@include font-size($fs-font-size);
+		}
+	}
+
+	@mixin font-size-map($fs-map) {
+		@each $fs-breakpoint, $fs-font-size in $fs-map {
+
+			@if $fs-breakpoint == null {
+				@include argument-length($fs-font-size);
+			}
+			@else {
+				@media #{map-get($breakpoints, $fs-breakpoint)} {
+					@include argument-length($fs-font-size);
+				}
+			}
+		}
+	}

@@ -1,0 +1,82 @@
+/*
+	Base
+	----------------------------------- */
+	
+	// options
+	$inputHeight: 40px !default;
+	$textareaHeight: 100px !default;
+	$inputHorizontalPadding: $base-spacing-unit !default;
+	$inputBorderColour: #000;
+	$inputBorderColourFocus: rgba(#000, .5);
+
+	.form {
+
+		select,
+		button,
+		input,
+		textarea {
+			font-family: $base-font;
+			border-radius: $base-radius;
+		}
+
+		input,
+		select {
+			height: $inputHeight;
+			line-height: $inputHeight;
+			padding: 0 calculate-rem($inputHorizontalPadding);
+		}
+
+		textarea {
+			resize: none;
+			padding: calculate-rem($inputHorizontalPadding);
+		}
+
+		&__label {
+			font-family: $base-font;
+			display: block;
+		}
+
+		&__input,
+		&__textarea {
+			background: transparent;
+			border: 1px solid $inputBorderColour;
+			display: block;
+			width: 100%;
+
+			&:focus {
+				border: 1px solid $inputBorderColourFocus;
+			}
+		}
+
+		&__textarea {
+			height: calculate-rem(100px);
+		}
+
+		&__button {
+			appearance: none;
+			border: 0;
+			border-bottom: 1px solid currentColor;
+
+			&--align-right {
+				float: right;
+			}
+		}
+
+		&--labels-in-fields & {
+			&__field {
+				position: relative;
+			}
+
+			&__label {
+				
+				// if JS is available then we position labels
+				// inside inputs so add the same padding as
+				// the inputs to position centre
+				.js & {
+					position: absolute;
+					@extend %p-xs;
+					@extend %p-s--\@-lg;
+				}
+			}
+		}
+	}

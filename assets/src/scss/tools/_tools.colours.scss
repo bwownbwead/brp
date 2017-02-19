@@ -1,0 +1,12 @@
+/*
+	Tools
+	----------------------------------- */
+
+	// Generate colour classes
+	@mixin generate-colour-util-classes($colours, $property) {
+		@each $colourName, $colour in $colours {
+			&-#{$colourName} {
+				#{$property}: #{$colour} !important;	
+			}
+		}
+	}

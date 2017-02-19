@@ -1,0 +1,18 @@
+/*
+	Utilities
+	----------------------------------- */
+
+	.fw,
+	%fw {
+		&-light {
+			@include fw-light;
+		}
+
+		&-regular {
+			@include fw-regular;
+		}
+
+		&-bold {
+			@include fw-bold;
+		}
+	}

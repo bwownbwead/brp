@@ -1,0 +1,181 @@
+/*
+	Utilities
+	----------------------------------- */
+	
+	$spacingClassNames: (
+		'p':	'all',
+		'pt': 	'top',
+		'pb': 	'bottom',
+		'ptb': 	'bottom',
+		'pl':	'left',
+		'pr':	'right',
+		'plr':	'right',
+
+		'm':	'all',
+		'ml':	'left',
+		'mr':	'right',
+		'mlr':	'right',
+		'mt': 	'top',
+		'mb': 	'bottom',
+		'mtb': 	'bottom'
+	);
+
+	$spacingSizes: (
+		'xs': 	$base-spacing-unit--x-small,
+		's': 	$base-spacing-unit--small,
+		'm': 	$base-spacing-unit,
+		'l': 	$base-spacing-unit--large,
+		'xl': 	$base-spacing-unit--x-large,
+		'xxl': 	$base-spacing-unit--xx-large,
+		'n':	0
+	);
+
+	@mixin spacing-classes() {
+		@each $class, $direction in $spacingClassNames {
+
+			$type: null;
+			$oppositeDirection: null;
+			$bothEnds: null;
+			$isPadding: str-index($class, 'p');
+			$_size: null;
+
+			@if str-length($class) == 1 {
+				$direction: null;
+			}
+			
+			// padding required top and bottom?
+			@if str-length($class) > 2 {
+				$bothEnds: true;
+
+				// set opposite direction if top and bottom required
+				@if $direction == 'top' {
+					$oppositeDirection: 'bottom';
+				}
+				@else if $direction == 'bottom' {
+					$oppositeDirection: 'top';
+				}
+
+				@else if $direction == 'left' {
+					$oppositeDirection: 'right';
+				}
+				@else if $direction == 'right' {
+					$oppositeDirection: 'left';
+				}
+			}
+			
+			// margin or padding?
+			@if $isPadding == 1 {
+				$type: 'padding';
+			}
+			@else {
+				$type: 'margin';
+			}
+
+			.#{$class},
+			%#{$class} {
+				@each $sizeName, $size in $spacingSizes {
+
+					@if $size != 0 {
+						$_size: calculate-rem($size);
+					}
+					@else {
+						$_size: $size;
+					}
+
+					&-#{$sizeName} {
+
+						@if $direction == null {
+							#{$type}: $_size;
+						}
+						@else {
+							#{$type}-#{$direction}: $_size;
+
+							@if $bothEnds != null {
+								#{$type}-#{$oppositeDirection}: $_size; 
+							}
+						}
+
+						&--\@-sm {
+							@media #{map-get($breakpoints, "tablet")} {
+
+								@if $direction == null {
+									#{$type}: $_size;
+								}
+								@else {
+									#{$type}-#{$direction}: $_size !important;
+
+									@if $bothEnds != null {
+										#{$type}-#{$oppositeDirection}: $_size !important; 
+									}
+								}
+							}
+						}
+
+						&--\@-md {
+							@media #{map-get($breakpoints, "desktop")} {
+
+								@if $direction == null {
+									#{$type}: $_size !important;
+								}
+								@else {
+									#{$type}-#{$direction}: $_size !important;
+
+									@if $bothEnds != null {
+										#{$type}-#{$oppositeDirection}: $_size !important; 
+									}
+								}
+							}
+						}
+
+						&--\@-lg {
+							@media #{map-get($breakpoints, "wide")} {
+								@if $direction == null {
+									#{$type}: $_size !important;
+								}
+								@else {
+									#{$type}-#{$direction}: $_size !important;
+									
+									@if $bothEnds != null {
+										#{$type}-#{$oppositeDirection}: $_size !important; 
+									}
+								}
+							}
+						}
+
+						&--\@-xlg {
+							@media #{map-get($breakpoints, "wider")} {
+								@if $direction == null {
+									#{$type}: $_size !important;
+								}
+								@else {
+									#{$type}-#{$direction}: $_size !important;
+									
+									@if $bothEnds != null {
+										#{$type}-#{$oppositeDirection}: $_size !important; 
+									}
+								}
+							}
+						}
+
+						&--\@-xxlg {
+							@media #{map-get($breakpoints, "widest")} {
+								@if $direction == null {
+									#{$type}: $_size !important;
+								}
+								@else {
+									#{$type}-#{$direction}: $_size !important;
+									
+									@if $bothEnds != null {
+										#{$type}-#{$oppositeDirection}: $_size !important; 
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include spacing-classes();
+

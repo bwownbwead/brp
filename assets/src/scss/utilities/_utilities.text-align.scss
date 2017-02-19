@@ -1,0 +1,43 @@
+/*
+	Utilities
+	----------------------------------- */
+
+	$directionLeft: left;
+	$directionRight: right;
+	$directionCenter: center;
+
+	$text-align-bps: (
+		'sm': 'tablet',
+		'md': 'desktop',
+		'lg': 'wide'
+	);
+
+	@mixin text-align-bps($direction) {
+		@each $size, $bp in $text-align-bps {
+			&--\@-#{$size} {
+				@media #{map-get($breakpoints, $bp)} {
+					text-align: $direction !important;
+				}
+			}
+		}
+	}
+
+	.ta {
+		&-#{$directionLeft} {
+			text-align: $directionLeft;
+
+			@include text-align-bps($directionLeft);
+		}
+
+		&-#{$directionRight} {
+			text-align: $directionRight;
+
+			@include text-align-bps($directionRight);
+		}
+
+		&-#{$directionCenter} {
+			text-align: $directionCenter;
+
+			@include text-align-bps($directionCenter);
+		}
+	}

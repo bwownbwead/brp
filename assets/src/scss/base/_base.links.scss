@@ -1,0 +1,36 @@
+/*
+	Base
+	----------------------------------- */
+
+	$hollowStyleBorderWidth: 2px;
+
+	a {
+		color: map-get($colours, 'orange');
+	}
+
+	.cta {
+		text-transform: uppercase;
+		
+		// give button-style base styles
+		&--large {
+			display: inline-block;
+			padding:  calculate-rem($base-spacing-unit) calculate-rem($base-spacing-unit--large);
+			text-decoration: none;
+		}
+
+		&--hollow {
+			color: map-get($colours, 'orange');
+			border: $hollowStyleBorderWidth solid currentColor;
+			padding:  calculate-rem($base-spacing-unit - $hollowStyleBorderWidth) calculate-rem($base-spacing-unit--large - $hollowStyleBorderWidth);
+		}
+
+		&--primary {
+			color: #fff;
+			background-color: map-get($colours, 'orange');
+		}
+
+		&--secondary {
+			color: #fff;
+			background-color: map-get($colours, 'orange');	
+		}
+	}

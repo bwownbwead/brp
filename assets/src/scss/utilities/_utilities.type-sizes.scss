@@ -1,0 +1,35 @@
+/*
+	Utilities
+	----------------------------------- */
+
+	.fs,
+	%fs {
+		
+		&-xs {
+			// currently unused
+		}
+
+		&-s {
+			@include font-size-map($font-sizes-s);
+		}
+
+		&-m {
+			@include font-size-map($font-sizes-m);
+		}
+
+		&-l {
+			@include font-size-map($font-sizes-l);
+		}
+
+		&-xl {
+			@include font-size-map($font-sizes-xl);
+		}
+
+		&-xxl {
+			@include font-size-map($font-sizes-xxl);
+		}
+
+		&-xxxl {
+			@include font-size-map($font-sizes-xxxl);
+		}
+	}

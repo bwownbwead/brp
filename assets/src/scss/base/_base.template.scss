@@ -1,0 +1,65 @@
+/*
+	Base
+	----------------------------------- */
+
+	html {
+		font-size: $base-font-size;
+	}
+
+	body {
+		@include fw-regular;
+		color: $site-base-font-colour;
+		font-family: $base-font;
+		line-height: $base-line-height;
+	}
+
+	.section-wrap {
+		margin-right: auto;
+		margin-left: auto;
+		max-width: calculate-rem(1680px);
+
+		@media #{map-get($breakpoints, 'tablet')} {
+			padding-right: calculate-rem($site-wrap-padding-tablet);
+			padding-left: calculate-rem($site-wrap-padding-tablet);
+		}
+
+		@media #{map-get($breakpoints, 'desktop')} {
+			padding-right: calculate-rem($site-wrap-padding-desktop);
+			padding-left: calculate-rem($site-wrap-padding-desktop);
+		}
+
+		&--restricted {
+			max-width: calculate-rem(1440px);
+		}
+	}
+
+	.inner-wrap-\@-sm {
+		@media #{map-get($breakpoints, "tablet-max")} {
+			padding-right: $grid-gutter-width;
+			padding-left: $grid-gutter-width;
+		}
+	}
+
+	// mini bootstrap reset for small screens
+	.row,
+	[class*="col-"] {
+		@media #{map-get($breakpoints, "tablet-max")} {
+			margin-right: 0;
+			margin-left: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	
+	// make phone links look they're not links
+	// (devices auto add a link around numbers and 
+	// styles them as default links)
+	a[href^="tel"] {
+		color: inherit;
+    	text-decoration: none;
+    	cursor: text;
+	}
+	
+
+
+

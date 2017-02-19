@@ -1,0 +1,11 @@
+/*
+	Utilities
+	----------------------------------- */
+
+	// generates all background colour classes using the 
+	// colour names in the specific colour map
+
+	// eg. ".bgc-dark-blue"
+	.bgc {
+		@include generate-colour-util-classes($bg-colours, 'background-color');
+	}

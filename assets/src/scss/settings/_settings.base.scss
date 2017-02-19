@@ -1,0 +1,49 @@
+/*
+	Settings
+	----------------------------------- */
+
+	$base-spacing-unit: 			20px !default;
+	$base-spacing-unit--small: 		round($base-spacing-unit / 2) !default;
+	$base-spacing-unit--x-small:	round($base-spacing-unit--small / 2) !default;
+	$base-spacing-unit--large: 		round($base-spacing-unit * 2) !default;
+	$base-spacing-unit--x-large: 	round($base-spacing-unit--large * 2) !default;
+	$base-spacing-unit--xx-large: 	round($base-spacing-unit--x-large * 2) !default;
+
+
+	// -------------------------------------------------------------
+	// base visual vars
+	// -------------------------------------------------------------
+
+	$base-radius: 		3px !default;
+
+	// -------------------------------------------------------------
+	// base animation vars
+	// -------------------------------------------------------------
+
+	$base-transition-time: 0.3s;
+	$base-transition-ease: ease;
+	$base-transition: $base-transition-time $base-transition-ease;
+
+	$site-wrap-padding-tablet: 16px;
+	$site-wrap-padding-desktop: 32px;
+
+	// -------------------------------------------------------------
+	// z-index page component stacking hierarchy
+	// -------------------------------------------------------------
+	// by default use lowest, if you find you need it above an element
+	// then move up a level. "high" and "highest" should only be used
+	// for exactly that. For example: A modal/overlay that has to cover 
+	// the fixed secondary nav and cookie disclaimer would be highest.
+	// -------------------------------------------------------------
+
+	$zindex:(
+		lowest: 10,
+		lower: 25,
+		low: 50,
+		mid: 100,
+		high: 500,
+		higher: 750,
+		highest: 1000
+	) !default;
+
+	// -------------------------------------------------------------

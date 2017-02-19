@@ -1,0 +1,27 @@
+/*
+	Settings
+	----------------------------------- */
+
+	$font-stack-fallback: 'Helvetica', 'Arial', 'Roboto', sans-serif !default;
+	$base-font: 'Source Sans Pro', $font-stack-fallback;
+
+	// adjust
+	
+	@mixin fw-light() {
+		font-weight: 300;
+	}
+
+	@mixin fw-regular() {
+		font-weight: 400;
+	}
+
+	@mixin fw-bold() {
+		font-weight: 700;
+	}
+
+
+
+
+
+
+

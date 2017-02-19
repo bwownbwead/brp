@@ -1,0 +1,36 @@
+/*
+	Utilities
+	----------------------------------- */
+	
+	$commonDisplayTypes: block inline-block inline table table-cell flex;
+
+	@mixin show-display-type() {
+		@each $displayType in $commonDisplayTypes {
+			&--#{$displayType} {
+				display: $displayType;
+			}
+		}
+	}
+
+	.display-none {
+		display: none;
+
+		&-until-sm {
+			@media #{map-get($breakpoints, 'tablet')} {
+				@include show-display-type;
+			}
+		}
+
+		&-until-md {
+			@media #{map-get($breakpoints, 'desktop')} {
+				@include show-display-type;
+			}	
+		}
+
+		&-until-lg {
+			@media #{map-get($breakpoints, 'wide')} {
+				@include show-display-type;
+			}
+		}
+	}
+

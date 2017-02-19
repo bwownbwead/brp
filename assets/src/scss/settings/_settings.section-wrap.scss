@@ -1,0 +1,42 @@
+/*
+	Settings
+	----------------------------------- */
+
+	@mixin section-wrap() {
+		@media #{map-get($breakpoints, 'tablet')} {
+			max-width: calculate-rem(900px);
+			padding-right: $site-wrap-padding-tablet;
+			padding-left: $site-wrap-padding-tablet;
+		}
+
+		@media #{map-get($breakpoints, 'desktop')} {
+			padding-right: $site-wrap-padding-desktop;
+			padding-left: $site-wrap-padding-desktop;
+		}
+
+		@media #{map-get($breakpoints, 'wide')} {
+			max-width: calculate-rem(1280px);
+		}
+
+		@media #{map-get($breakpoints, 'widest')} {
+			max-width: calculate-rem(1600px);
+		}
+
+		&--restricted {
+			@media #{map-get($breakpoints, 'tablet')} {
+				max-width: calculate-rem(900px);
+			}
+
+			@media #{map-get($breakpoints, 'desktop')} {
+				max-width: calculate-rem(900px);
+			}
+
+			@media #{map-get($breakpoints, 'wide')} {
+				max-width: calculate-rem(900px);
+			}
+
+			@media #{map-get($breakpoints, 'widest')} {
+				max-width: calculate-rem(900px);
+			}
+		}
+	}

@@ -1,0 +1,31 @@
+/*
+	Includes
+	----------------------------------- */
+
+	// Settings - variables etc
+	@import 'settings/settings';
+
+	// Tools - mixins, functions etc
+	@import 'tools/tools';
+
+	// Generic - resets, normalize etc
+	@import 'generic/generic';
+
+	// Library - third party CSS
+	@import 'lib/lib';
+
+	$bootStrapPath: null;
+
+	// Bootstrap - pulling in parts of bootstrap library
+	@import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+	@import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+	@import '../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid';
+
+	// Base - basic template 
+	@import 'base/base';
+
+	// Components - unique 'things'
+	@import 'components/components';
+
+	// Utilities - classes that do one or two things, 
+	@import 'utilities/utilities';
