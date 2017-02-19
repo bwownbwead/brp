@@ -5,7 +5,7 @@ require('expose-loader?$!jquery'); // Globally expose Jquery
 require('./lib/foundation.min');
 require('./lib/owl.carousel-2');
 // require('./lib/modernizr-custom');
-require('./lib/velocity.min');
+require('./lib/velocity.min');	
 
 // base object
 var nameOfProject = {};
